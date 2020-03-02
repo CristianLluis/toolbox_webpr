@@ -3,22 +3,22 @@ const radius = 10;
 const ball = {x:Math.random()*400, y:10, dx: 5, dy: 1};
 const old  = {x: ball.x, y: ball.y};
 
-// const audioContext = new AudioContext();
-// const oscillator = audioContext.createOscillator();
-// oscillator.type  = oscillator.SINE;
-// oscillator.frequency.value = 440; // default
-//
-// const audioControl = audioContext.createGain();
-// audioControl.gain.value = 0;
-//
-// oscillator.connect(audioControl);
-// audioControl.connect(audioContext.destination);
-//
-// function beep(offset = 0) {
-//     oscillator.frequency.value = 440 + offset;
-//     audioControl.gain.value = 1;
-//     setTimeout( () => audioControl.gain.value = 0, 500 )
-// }
+const audioContext = new AudioContext();
+const oscillator = audioContext.createOscillator();
+oscillator.type  = oscillator.SINE;
+oscillator.frequency.value = 440; // default
+
+const audioControl = audioContext.createGain();
+audioControl.gain.value = 0;
+
+oscillator.connect(audioControl);
+audioControl.connect(audioContext.destination);
+
+function beep(offset = 0) {
+    oscillator.frequency.value = 440 + offset;
+    audioControl.gain.value = 1;
+    setTimeout( () => audioControl.gain.value = 0, 500 )
+}
 
 function start() {
     // oscillator.start(0);

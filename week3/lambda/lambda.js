@@ -3,6 +3,48 @@
 
 // ----- special -----
 
+const id = x => x;
+const fst = x => y => x;
+const snd = x => y => y;
+
+const M = f => f (f);
+
+const konst = fst;
+
+// and
+// const T = first => second => first; // curch encoding named after Alonzo Church (https://en.wikipedia.org/wiki/Alonzo_Church)
+// const F = first => second => second;
+
+const T = fst;
+const F = snd;
+
+const and = first => second => first(second)(first);
+
+// or
+const or = M;
+
+// Pair
+const Pair = first => second => f => f (first)(second)
+// const firstname = first => second => first
+const firstname = fst
+// const lastname = first => second => second
+const lastname = snd
+
+/* 
+ * either = e
+ * errorCase = f
+ * nonErrorCases = g
+ */
+const Left = msg => f => g => f(msg)
+const Right = res => f => g => g (res)
+//const either = e => f => g => e (f) (g) //  Eta Reduktion
+//const either = e => f => e (f) // 2nd Eta Reduktion
+//const either = e => e // same as id function on line 6
+const either = id
+
+
+// =================================================================
+// Hausaufgaben
 const Tuple = n => [
     parmStore (n + 1) ( [] ) (parms => parms.reduce( (accu, it) => accu(it), parms.pop() ) ), // ctor
     ...Array.from( {length:n}, (it, idx) => iOfN (n) (idx) () )                    // selectors
