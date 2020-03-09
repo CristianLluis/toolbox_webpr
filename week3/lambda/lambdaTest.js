@@ -59,7 +59,6 @@ ok.push( or(T)(T) === T );
 const dierk = Pair("Dierk")("König"); // immutable
 ok.push( dierk(firstname) === "Dierk");
 ok.push( dierk(lastname)  === "König");
-
 // const tdierk = Triple("Dierk")("König")(50); // immutable
 // ok.push( tdierk(tfirstname) === "Dierk");
 // ok.push( tdierk(tlastname)  === "König");

@@ -21,7 +21,7 @@ function beep(offset = 0) {
 }
 
 function start() {
-    // oscillator.start(0);
+    oscillator.start(0);
     const canvas  = document.getElementById("canvas");
     const context = canvas.getContext("2d");
     context.fillStyle = "black";
@@ -38,16 +38,16 @@ function nextBoard() {
     old.y = ball.y;
     if (ball.y >= 390 && ball.dy > 0) {  // ball.y < 0 cannot occur due to conservation of energy
         if ( Math.abs(ball.dy) > 4) {
-            // beep(Math.abs(ball.dy) * 20);
+            beep(Math.abs(ball.dy) * 20);
         } else {
-            // oscillator.stop(0);    // avoid surface noise
+            oscillator.stop(0);    // avoid surface noise
             ball.dx *= 0.99;       // surface traction
         }
         ball.dy -= 4;
         ball.dy *= -1;
     }
     if (ball.x <= 10 && ball.dx < 0 || ball.x >= 390 && ball.dx > 0) {
-        // beep();
+        beep();
         ball.dx *= -1;
         ball.dx *= 0.8;
     }
