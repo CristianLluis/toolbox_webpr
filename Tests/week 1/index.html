@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+		const plus = (a) => {
+			return (b) => {
+				return a + b
+			}
+		}
+
+		// oder
+		// const plus = a => b => a + b
+
+		const x_ = Math.random();
+		const y_ = Math.random();
+		const plus3 = plus(3);
+
+		document.writeln(plus(x_)(y_) === x_ + y_ && plus3(y_) === y_ + 3);
+	</script>
+</body>
+
+</html>
