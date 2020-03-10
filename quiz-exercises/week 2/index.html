@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script src="./index.js"></script>
+
+	<script>
+
+		// let x = 0;
+		// function two() {
+		// 	let x = 2;
+		// 	return x;
+		// }
+		// two();
+
+		// try {
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		//true
+
+		//==========================================================================
+
+		// let x = 0;
+		// (function two() {
+		// 	let x = 2;
+		// 	return x;
+		// })();
+
+		// try {
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		//true
+
+		//==========================================================================
+
+		// let x = 0;
+		// ( () => {
+		// 	let x = 2;
+		// 	return x;
+		// })();
+
+		// try {
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		//true
+
+		//==========================================================================
+
+		// x = 0;
+		// ( () => {
+		// 	x = 2;
+		// 	return x;
+		// })();
+
+		// try {
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		// false
+
+		//==========================================================================
+
+		// let x = 0;
+		// function two() {
+		// 	let x = 2;
+		// 	return x;
+		// }();
+
+		// try {
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		// error
+
+		//==========================================================================		
+
+		// let x = 0;
+		// (function() {
+		// 	let x = 2;
+		// 	return x;
+		// })();
+
+		// try {
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		//true
+
+		//==========================================================================
+		//==========================================================================		
+
+		// let x = 0;
+		// function two() {
+		// 	let x = 2;
+		// 	return x;
+		// }
+		// two();
+
+		// try {
+		// 	x;
+		// 	document.writeln(x === 0)
+		// } catch (e) {
+		// 	document.writeln(false)
+		// }
+
+		//true
+
+		//==========================================================================
+
+		// function two(){
+		// 	let x = 2
+		// 	return x
+		// }
+
+		// try {
+		// 	x;
+		// 	document.writeln(true)
+		// } catch(e) {
+		// 	document.writeln(false)
+		// }
+
+		//false
+
+		//==========================================================================
+
+		// function two(){
+		// 	x = 2
+		// 	return x
+		// }
+		// two();
+
+		// try {
+		// 	x;
+		// 	document.writeln(true)
+		// } catch(e) {
+		// 	document.writeln(false)
+		// }		
+
+		//false
+
+		//==========================================================================
+
+		// function two(){
+		// 	x=2;
+		// 	return x;
+		// }
+
+		// try{
+		// 	x;
+		// 	document.writeln(true)
+		// } catch(e) {
+		// 	document.writeln(false)
+		// }
+
+		// false
+
+		//==========================================================================
+
+		// let x = 0
+		// function two(){
+		// 	let x = 2;
+		// 	return x;
+		// }
+		// two();
+
+		// try{
+		// 	x;
+		// 	document.writeln(x === 0)
+		// } catch(e) {
+		// 	document.writeln(false)
+		// }
+
+		//true
+
+		//==========================================================================
+		//==========================================================================
+
+		//is a1 a proper beta beta expansion of a2?
+
+		// const id = x => x;
+
+		// const a1 = y => id(y)
+		// const a2 = y => y
+		
+		// document.writeln(a1(1))
+		// document.writeln(a2(1))
+
+		//yes
+
+		//==========================================================================
+
+		//is a1 a proper eta reduction of a2?
+
+		// const id = x => x
+		// const konst = x => y => x 
+
+		// const F1 = x => y => konst (id) (x) (y)
+		// const F2 = x => konst (id) (x)
+		// const F3 = konst (id)
+		
+		// document.writeln(F1(1)(2))
+		// document.writeln(F2(1)(2))
+		// document.writeln(F3(1)(2))
+
+		//yes
+
+		//==========================================================================
+		
+		// const id = y => y
+		// const fst = x => y => x
+		// const sndX = x => y => y
+
+		// const snd = fst(id)
+
+		// document.writeln(snd(5)(7))
+	</script>
+
+</body>
+
+</html>
