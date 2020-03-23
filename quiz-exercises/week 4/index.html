@@ -11,6 +11,7 @@
 
 	<script>
 		// reduce
+		// the separator is the '-'
 		let join = separator => (accumulator, current) => accumulator + separator + current;
 
 		document.writeln([1, 2, 3].reduce(join('-')));
