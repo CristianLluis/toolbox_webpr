@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+
+		// //true
+		// class Person {
+		// 	constructor(name) {
+		// 		this.name = name;
+		// 	}
+		// 	isCool() {return this.name.length > 3};
+		// }
+		// const p = new Person("Dierk")
+		// document.writeln(p.isCool())
+
+		// //true
+		// class Person2 {
+		// 	constructor(name) {
+		// 		this.name = name;
+		// 	}
+		// 	isCool() {return this.name.length > 3};
+		// }
+		// const p2 = new Person2("Dierk")
+		// document.writeln(p2.name === "Dierk")
+
+		//error
+		// class Person {
+		// 	constructor(name) {
+		// 	}
+		// 	isCool() {return this.name.length > 3};
+		// }
+		// const p = new Person("Dierk")
+		// document.writeln(p.isCool())
+
+		//false
+		// class Person {
+		// 	constructor(name) {
+		// 		this.name = name;
+		// 	}
+		// 	isCool() {return this.name.length > 3};
+		// }
+		// const p = new Person("Dierk")
+		// const joe = {
+		// 	name: "joe",
+		// 	cool: p.isCool
+		// };
+		// document.writeln(joe.cool())
+
+		// //true
+		// class Person {
+		// 	isCool() {return this.name.length > 3};
+		// }
+		// const p = new Person()
+		// p.name="Dierk"
+		// document.writeln(p.isCool());
+
+		// true
+		// class Person {
+		// 	constructor(name){
+		// 		this.name = name
+		// 	}
+		// 	isCool() {return this.name === "Dierk"};
+		// }
+		// const p = new Person("Dierk")
+		// document.writeln(p.isCool());
+
+		// // //true
+		// class Person {
+		// 	constructor(){
+		// 		this.name = name
+		// 	}
+		// 	isCool() {return this.name.length > 3};
+		// }
+		// const p = new Person("Joe")
+		// p.isCool = () => true;
+		// document.writeln(p.isCool());
+
+		// //true
+		// class Person {
+		// 	constructor() {
+		// 		this.name = name
+		// 	}
+		// 	isCool() { return this.name.length > 3 };
+		// }
+		// const p = new Person("Joe")
+		// Person.prototype.isCool = () => true;
+		// document.writeln(p.isCool());
+
+
+		class Person {}	
+		const p = {}
+		Object.setPrototypeOf(p, Person)
+		document.writeln(p instanceof Person)
+
+
+
+
+	</script>
+
+</body>
+
+</html>
