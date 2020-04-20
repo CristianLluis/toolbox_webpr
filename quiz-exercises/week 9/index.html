@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// true
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val =>  {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+		// const color = Observable('white');
+		// color.setValue('black')
+		// document.writeln(color.getValue() === 'black')
+
+		//false
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val =>  {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+		// const color = Observable('white');
+		// let observed = null
+		// color.onChange(val => observed = val)
+
+		// document.writeln(observed === color.getValue())
+
+		// error listener not defined
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val =>  {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+
+		// const color = Observable('white')
+		// let updateCount = 0
+		// color.onChange( _ => updateCount++)
+		// color.setValue('black')
+		// color.setValue('White')
+
+		// document.writeln(updateCount === 2)
+
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val =>  {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+
+		// const color = Observable('white')
+		// document.writeln(color.getValue() === 'white')
+
+		//false
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val => {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+
+		// const color = Observable('white')
+		// let updateCount = 0
+		// color.onChange(_ => updateCount++)
+		// color.setValue('white')
+		// document.writeln(updateCount === 1)
+
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val => {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+
+		// const color = Observable('white')
+		// let observed = color.getValue()
+		// color.onChange(val => observed = val)
+		// document.writeln(observed === color.getValue())
+
+		//error listener not defined
+		// const Observable = value => {
+		// 	const listeners = []
+		// 	return {
+		// 		onChange: callback => listeners.push(callback),
+		// 		getValue: () => value,
+		// 		setValue: val => {
+		// 			if (value === val) return
+		// 			value = val
+		// 			listeners.forEach(listerner => listener(val))
+		// 		}
+		// 	}
+		// }
+
+		// const color = Observable('white')
+		// let updateCount = 0
+		// color.onChange( _ => updateCount++)
+
+		// color.setValue('black')
+		// document.writeln( updateCount === 1 )
+
+
+		//q20a
+		const Observable = value => {
+			const listeners = []
+			return {
+				onChange: callback => {
+					listeners.push(callback)
+					callback(value,value)
+				},
+				getValue: () => value,
+				setValue: newValue => {
+					if (value === newValue) return
+					const oldValue = value
+					value = newValue
+					listeners.forEach(callback => callback(value, oldValue))
+				}
+			}
+		}
+
+		let sum = 0
+		const trackable = Observable(0)
+		
+		trackable.onChange(function (value){
+			sum = sum + value
+		})
+
+		trackable.setValue(1)
+		trackable.setValue(2)
+		trackable.setValue(3)
+
+		document.writeln(trackable.getValue() === 3 && sum === 3+2+1)
+
+
+
+	</script>
+</body>
+
+</html>
