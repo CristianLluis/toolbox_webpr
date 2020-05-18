@@ -10,31 +10,22 @@
 <body>
 	<script>
 
-		const str2chars = str => {
-			return str.toLowerCase().split('')
-		}
+		const str2chars = str => [...str]
 
-		const isAlpha = char => {
-			if (char.match(/[a-z]/)) {
-				return true
-			} else {
-				return false
-			}
-		}
+		const isAlpha = char => char.match(/[a-z]/)
 
 		let palindrome = str => {
 
-			const cleanArr = arr => {
-				return arr.filter(char => isAlpha(char))
+			const convertToCleanArr = str => {
+				return str2chars(str.toLowerCase()).filter(char => isAlpha(char))
 			}
 
-
 			const reverseArr = arr => {
-				let newArr = []
+				let reversedArr = []
 				for (let i = arr.length - 1; i >= 0; i--) {
 					newArr.push(arr[i]);
 				}
-				return newArr
+				return reversedArr
 			}
 
 			const compare2arr = (arr1, arr2) => {
@@ -42,7 +33,7 @@
   				return arr1.every((e, i) => e === arr2[i])
 			}
 
-			let fordwards = cleanArr(str2chars(str))
+			let fordwards = convertToCleanArr(str)
 			let backwards = reverseArr(fordwards)
 			return compare2arr(fordwards, backwards)
 		}
