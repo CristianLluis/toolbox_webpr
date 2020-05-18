@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		const str2chars = str => {
+			return str.toLowerCase().split('')
+		}
+
+		const isAlpha = char => {
+			if (char.match(/[a-z]/)) {
+				return true
+			} else {
+				return false
+			}
+		}
+
+		let palindrome = str => {
+
+			const cleanArr = arr => {
+				return arr.filter(char => isAlpha(char))
+			}
+
+
+			const reverseArr = arr => {
+				let newArr = []
+				for (let i = arr.length - 1; i >= 0; i--) {
+					newArr.push(arr[i]);
+				}
+				return newArr
+			}
+
+			const compare2arr = (arr1, arr2) => {
+				if (arr1.length !== arr2.length) return false
+  				return arr1.every((e, i) => e === arr2[i])
+			}
+
+			let fordwards = cleanArr(str2chars(str))
+			let backwards = reverseArr(fordwards)
+			return compare2arr(fordwards, backwards)
+		}
+
+		console.log(
+			palindrome('Amore, Roma!')
+			&& palindrome("Madam, I'm Adam!")
+			&& palindrome("Never odd or even.")
+			&& ! palindrome("Amore")
+		)
+
+	</script>
+</body>
+
+</html>

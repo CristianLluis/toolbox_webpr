@@ -230,6 +230,7 @@
 		/********************************************************************************/
 		// const idPromise = x => new Promise (resolve => resolve(x));
 		// const failPromise = err => new Promise((resolve, reject) => reject(err))
+		
 		const NullSafe = x => {
 			const isNullSafe = y => y && y.then;
 			const maywrap = y => isNullSafe(y) ? new Promise (resolve => resolve(y)) : new Promise((resolve, reject) => reject()) // if y is not NullSafe yet, make it so
