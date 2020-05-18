@@ -241,14 +241,12 @@
 		// x_ and y_ are given. do not override.
 		let x_ = 1
 		let y_ = 3
-		console.log(
 			NullSafe(x_)
-				.then(x => x * 2)          // must auto-promote
+				.then(x => console.log(x * 2))          // must auto-promote
 				.then(x => NullSafe(x))  // must not auto-promote
 				.then(x => y_ = x + 1)   // store value, check no double promotion
 				.then(x => null)         // jump over rest
 				.then(x => x.mustNotBeCalled) !== null && y_ === x_ * 2 + 1
-		)
 
 
 
