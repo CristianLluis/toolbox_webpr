@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		const str2chars = str => [...str]
+
+		const isAlpha = char => char.match(/[a-z]/)
+
+		let palindrome = str => {
+			let clnArr = str => {
+				return str2chars(str.toLowerCase()).filter(char => isAlpha(char))
+			}
+			let rvsArr = arr => {
+				let rvsArr = []
+				for (let i = arr.length - 1; i >= 0; i--) {
+					rvsArr.push(arr[i]);
+				}
+				return rvsArr
+			}
+			let cmpArr = (arr1, arr2) => {
+				if (arr1.length !== arr2.length) return false
+  				return arr1.every((e, i) => e === arr2[i])
+			}
+			let ford = clnArr(str)
+			let back = rvsArr(ford)
+			return cmpArr(ford, back)
+		}
+
+		console.log(
+			palindrome('Amore, Roma!')
+			&& palindrome("Madam, I'm Adam!")
+			&& palindrome("Never odd or even.")
+			&& ! palindrome("Amore")
+		)
+
+	</script>
+</body>
+
+</html>
